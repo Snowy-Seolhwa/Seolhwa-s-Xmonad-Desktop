@@ -2,7 +2,7 @@
 This is the repository for all of the dotfiles and theme/skin files I use on my linux desktop. It has:
 - xmonad
 - xmobar
-- my custom rofi and winamp/audacious skins/themes
+- my custom rofi theme
 - a list of links to all of the system themes, fonts, and icons I use
 - a list of all the programs that I need on a daily basis 
 - kitty
