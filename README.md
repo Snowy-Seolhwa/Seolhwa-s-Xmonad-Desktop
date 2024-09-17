@@ -1,4 +1,7 @@
 # Seolhwa's Xmonad Desktop
+
+https://github.com/user-attachments/assets/a5e3622a-d7e2-4b63-be7b-af4121e8c7d5
+
 This is the repository for all of the dotfiles and theme/skin files I use on my linux desktop. It has:
 - xmonad
 - xmobar
