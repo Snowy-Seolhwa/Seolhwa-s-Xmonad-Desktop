@@ -28,6 +28,7 @@ Stuff that is either system related or directly utilized by the window manager
 -libnotify (notify-send)
 -nmtui
 -wireplumber?
+-monoid font
 
 Stuff that is needed for day to day usage
 -vlc
