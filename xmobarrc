@@ -1,0 +1,48 @@
+Config { font = "xft:Monoid-Regular 9"
+       , additionalFonts = []
+       , bgColor = "white"
+       , fgColor = "black"
+       , position = Static { xpos= 12 , ypos = 12, width = 1576, height = 30 }
+       , textOffset = -1
+       , iconOffset = -1
+       , lowerOnStart = True
+       , pickBroadest = False
+       , persistent = False
+       , hideOnStart = False
+       , iconRoot = "."
+       , allDesktops = True
+       , overrideRedirect = True
+       , commands = [ Run Weather "KTCL" ["-t","Weather: <skyCondition> <windKnots>Kts <tempC>C"] 36000
+		    , Run Network "wlp3s0" ["-t","Wifi: ↑<tx>Kb ↓<rx>Kb"] 10
+                    , Run Cpu [] 10
+                    , Run Memory ["-t","Ram: <used> Mb"] 20
+                    , Run Date "%a %b %_d %H:%M" "date" 10
+		    , Run StdinReader
+		    , Run Alsa "default" "Master"
+                        [ "--template", "Volume: <volumestatus>"
+                        , "--suffix"  , "True"
+                        , "--"
+                        , "--on", ""
+                        ]
+		    , Run Battery        [ "--template" , "Battery: <acstatus>"
+                             , "--Low"      , "10"        -- units: %
+                             , "--High"     , "80"        -- units: %
+                             , "--low"      , "red"
+                             , "--normal"   , "orange"
+                             , "--high"     , "green"
+
+                             , "--" -- battery specific options
+                                       -- discharging status
+                                       , "-o"	, "<left>%"
+                                       -- AC "on" status
+                                       , "-O"	, "<fc=orange>Charging</fc>"
+                                       -- charged status
+                                       , "-i"	, "<fc=green>Charged</fc>"
+                             ] 50
+                    , Run XMonadLog
+                    
+		    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = " ♥ %cpu% | %memory% | %wlp3s0% | %battery%} %XMonadLog% {%alsa:default:Master% | %KTCL% | %date% ♥ "
+       }
