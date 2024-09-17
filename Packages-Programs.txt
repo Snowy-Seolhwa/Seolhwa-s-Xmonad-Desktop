@@ -28,7 +28,6 @@ Stuff that is either system related or directly utilized by the window manager
 -libnotify (notify-send)
 -nmtui
 -wireplumber?
--monoid font
 
 Stuff that is needed for day to day usage
 -vlc
@@ -40,3 +39,11 @@ Stuff that is needed for day to day usage
 -clamav
 -libreoffice
 -cheese
+
+Fonts/Themes/Icons
+- Monoid https://larsenwork.com/monoid/
+- Nanum Gothic Coding https://fonts.google.com/specimen/Nanum+Gothic+Coding
+- Equilux https://store.kde.org/p/1182169/
+- Graphite Dark https://www.gnome-look.org/p/1598493
+- Posy's Cursors https://store.kde.org/p/1795042/
+- Tela Grey https://store.kde.org/p/1279924/
