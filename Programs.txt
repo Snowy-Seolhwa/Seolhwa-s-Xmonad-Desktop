@@ -1,0 +1,41 @@
+Stuff that is critical and needs to probably be installed before the other stuff
+-xorg
+-pipewire
+
+Stuff that is either system related or directly utilized by the window manager
+-xmonad
+-xmonad-contrib
+-xmobar
+-kitty
+-picom
+-dunst
+-fcitx5
+-emacs
+-rofi
+-scrot
+-xscreensaver
+-discord
+-audacious
+-xbacklight
+-firefox
+-nemo
+-feh
+-xsetroot
+-lxappearance
+-qt5ct (qt5 config tool)
+-arandr
+-im-config
+-libnotify (notify-send)
+-nmtui
+-wireplumber?
+
+Stuff that is needed for day to day usage
+-vlc
+-openshot
+-audacity
+-gimp
+-steam
+-simplescreenrecorder
+-clamav
+-libreoffice
+-cheese
