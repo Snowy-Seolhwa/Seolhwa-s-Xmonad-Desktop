@@ -47,3 +47,4 @@ Fonts/Themes/Icons
 - Graphite Dark https://www.gnome-look.org/p/1598493
 - Posy's Cursors https://store.kde.org/p/1795042/
 - Tela Grey https://store.kde.org/p/1279924/
+- Kvantum
