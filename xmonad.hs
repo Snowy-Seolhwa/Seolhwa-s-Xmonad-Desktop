@@ -112,8 +112,8 @@ myConfig = def
     , ("M-C-4", sendMessage $ JumpToLayout "Grid") --makes a grid of windows
     , ("M-C-5", sendMessage $ JumpToLayout "ThreeCol") --three columns with the middle magnified
     , ("M-C-6", sendMessage $ JumpToLayout "BSP") --lets you split windows in half
-    , ("M-<F8>", spawn "xbacklight -dec 5%") --increase and decrease the screen brightness
-    , ("M-<F9>", spawn "xbacklight -inc 5%")
+    , ("M-<XF86MonBrightnessDown>", spawn "xbacklight -dec 5%") --increase and decrease the screen brightness
+    , ("M-<XF86MonBrightnessUp>", spawn "xbacklight -inc 5%")
     --TODO: change this to pipewire controls
     , ("<XF86AudioLowerVolume>", spawn "/usr/bin/amixer set Master 5%-") --increase, decrease, mute, and mic mute
     , ("<XF86AudioRaiseVolume>", spawn "/usr/bin/amixer set Master 5%+")
@@ -208,9 +208,8 @@ myLayout = lessBorders OnlyFloat $ renamed [CutWordsLeft 1] $ spacing 12 (tiled 
 --I like to run emacs on startup because I have my to do list in there so I'm reminded whenever i start my computer or recompile xmonad
 myStartupHook :: X ()
 myStartupHook = do
-    spawnOnce "feh --bg-scale ~/Multimedia/Wallpapers/cyberware.png &"
+    spawnOnce "feh --bg-scale ~/Multimedia/Wallpapers/cyberware2.png &"
     spawnOnce "picom &"
-    spawnOnce "emacs &"
     spawnOnce "xsetroot -cursor_name left_ptr &"
     spawnOnce "dunst &" --notifications
     spawnOnce "fcitx5 -d &" --language input (hangul in my case)
