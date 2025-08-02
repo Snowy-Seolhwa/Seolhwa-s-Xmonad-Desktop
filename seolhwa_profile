@@ -1,0 +1,7 @@
+#Seolhwa's user settings
+if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
+    exec startx
+fi
+
+export QT_STYLE_OVERRIDE=kvantum
+
