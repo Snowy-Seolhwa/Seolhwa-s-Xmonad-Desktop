@@ -1,0 +1,6 @@
+[Text]
+Normal=#676767
+Current=#E7E7E7
+NormalBG=#000000
+SelectedBG=#505050
+Font=Courier New
