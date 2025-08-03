@@ -70,7 +70,6 @@ wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/re
 sudo cat seolhwa_profile >> ~/.profile
 rm seolhwa_profile
 sudo mv xmobarrc ~/.config/xmobar
-wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/
 wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/picom.conf
 sudo mkdir ~/.config/picom
 sudo mv picom.conf ~/.config/picom
@@ -79,11 +78,27 @@ sudo mv kitty.conf ~/.config/kitty
 wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/Wallpapers/cyberware.png
 wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/Wallpapers/cyberware2.png
 sudo mv cyberware* ~/Multimedia/Wallpapers
+wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/seolhwa_bashrc
+sudo cat seolhwa_bashrc >> ~/.bashrc
+rm seolhwa_bashrc
 
 #stuff to do when you come back to this: write the script for installing themes, icons, and cursors, look into automatically setting qt to gtk?
 sudo mkdir ~/.config/rofi
 sudo echo "@theme "/usr/share/rofi/themes/seolfi.rasi"" > config.rasi
 wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/Themes/seolfi.rasi
+sudo mkdir ~/.themes
+wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/Themes/Equilux.tar
+sudo tar -xvf Equilux.tar
+sudo rm Equilux.tar
+sudo mv Equilux.tar ~/.themes
+wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/Themes/PosysCursors.zip
+wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/Themes/Tela-grey.tar.xz
+sudo tar -xvf Tela-grey.tar.xz
+sudo unzip PosysCursors.zip
+sudo mv PosysCursors /usr/share/icons
+sudo mv Tela-grey /usr/share/icons
+wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/Themes/lain
+sudo mv lain /usr/share/audacious/Skins
 
 echo -e "[$load]\e[0m"
 sleep 1
