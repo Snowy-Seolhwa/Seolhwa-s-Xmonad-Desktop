@@ -10,7 +10,7 @@ echo -e "\e[34m
 ░▒▓███████▓▒░  ░▒▓████████▓▒░  ░▒▓██████▓▒░  ░▒▓████████▓▒░ ░▒▓█▓▒░░▒▓█▓▒░  ░▒▓█████████████▓▒░  ░▒▓█▓▒░░▒▓█▓▒░                                                                                                               
  \e[0m"
 
-echo -e "\e[34mVersion 1.0.1 \n \e[0m"
+echo -e "\e[34mVersion 1.0.2 \n \e[0m"
 
 echo -e "\e[34m   Welcome to the Seolhwa Desktop environment installer script! This script is configured to install the XMonad window manager
 with a collection of basic software, themes, games, icons, fonts, and desktop programs. Please run this script on a fresh 
@@ -52,55 +52,59 @@ sleep 1
 #create custom home directory organization
 load="============================>          "
 echo -e "\e[34m"
-mkdir ~/Downloads ~/Games ~/Multimedia ~/Programs
-mkdir ~/Multimedia/Documents ~/Multimedia/Memes ~/Multimedia/Pictures ~/Multimedia/Music ~/Multimedia/Temp ~/Multimedia/Videos ~/Multimedia/Wallpapers ~/Multimedia/Pictures/Screenshots
+mkdir Downloads Games Multimedia Programs
+mkdir Multimedia/Documents Multimedia/Memes Multimedia/Pictures Multimedia/Music Multimedia/Temp Multimedia/Videos Multimedia/Wallpapers Multimedia/Pictures/Screenshots
 echo -e "[$load]\e[0m"
 sleep 1
 
 #retrieve dot files, fonts, themes, wallpaper, and icons, move them to their correct directories/overwrite pre-existing files
 load="======================================>"
 echo -e "\e[34m"
-mkdir ~/.config
-mkdir ~/.config/xmonad
-mkdir ~/.config/xmobar
+mkdir .config
+mkdir .config/xmonad
+mkdir .config/xmobar
 sudo zypper in kvantum-qt5 kvantum-qt6 monoid-fonts fontawesome-fonts
 wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/xmonad.hs
-mv xmonad.hs ~/.config/xmonad
+mv xmonad.hs .config/xmonad
 wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/xmobarrc
-mkdir ~/.config/xmobar
-sudo echo "exec xmonad" > ~/.xinitrc
+mkdir .config/xmobar
+sudo echo "exec xmonad" > .xinitrc
 wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/seolhwa_profile
-cat seolhwa_profile >> ~/.profile
+cat seolhwa_profile >> .profile
 rm seolhwa_profile
-mv xmobarrc ~/.config/xmobar
+mv xmobarrc .config/xmobar
 wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/picom.conf
-mkdir ~/.config/picom
-mv picom.conf ~/.config/picom
+mkdir .config/picom
+mv picom.conf .config/picom
 wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/kitty.conf
-mv kitty.conf ~/.config/kitty
+mv kitty.conf .config/kitty
 wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/Wallpapers/cyberware.png
 wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/Wallpapers/cyberware2.png
-mv cyberware* ~/Multimedia/Wallpapers
+mv cyberware* Multimedia/Wallpapers
 wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/seolhwa_bashrc
-cat seolhwa_bashrc >> ~/.bashrc
+cat seolhwa_bashrc >> .bashrc
 rm seolhwa_bashrc
 
 #stuff to do when you come back to this: write the script for installing themes, icons, and cursors, look into automatically setting qt to gtk?
-mkdir ~/.config/rofi
-sudo echo "@theme "/usr/share/rofi/themes/seolfi.rasi"" > config.rasi
+mkdir .config/rofi
+echo "@theme "/usr/share/rofi/themes/seolfi.rasi"" > config.rasi
+mv config.rasi .config/rofi
 wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/Themes/seolfi.rasi
-mkdir ~/.themes
+mv seolfi.rasi /usr/share/rofi/themes
+mkdir .themes
 wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/Themes/Equilux.tar
-sudo tar -xvf Equilux.tar
+tar -xvf Equilux.tar
 rm Equilux.tar
-mv Equilux ~/.themes
+mv Equilux .themes
 wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/Themes/PosysCursors.zip
 wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/Themes/Tela-grey.tar.xz
-sudo tar -xvf Tela-grey.tar.xz
-sudo unzip PosysCursors.zip
+tar -xvf Tela-grey.tar.xz
+unzip PosysCursors.zip
 mv "Posy's Cursor" /usr/share/icons
 mv Tela-grey /usr/share/icons
 rm -r Tela-grey-dark Tela-grey-light
+rm PosysCursors.zip
+rm Tela-grey.tar.xz
 wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/Themes/lain.wsz
 mv lain.wsz /usr/share/audacious/Skins
 
