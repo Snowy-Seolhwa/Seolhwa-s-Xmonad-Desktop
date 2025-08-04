@@ -52,14 +52,17 @@ sleep 1
 #create custom home directory organization
 load="============================>          "
 echo -e "\e[34m"
-mkdir ~/Downloads ~/Games ~/Multimedia ~/Programs
-mkdir ~/Multimedia/Documents ~/Multimedia/Memes ~/Multimedia/Pictures ~/Multimedia/Music ~/Multimedia/Temp ~/Multimedia/Videos ~/Multimedia/Wallpapers ~/Multimedia/Pictures/Screenshots
+sudo mkdir ~/Downloads ~/Games ~/Multimedia ~/Programs
+sudo mkdir ~/Multimedia/Documents ~/Multimedia/Memes ~/Multimedia/Pictures ~/Multimedia/Music ~/Multimedia/Temp ~/Multimedia/Videos ~/Multimedia/Wallpapers ~/Multimedia/Pictures/Screenshots
 echo -e "[$load]\e[0m"
 sleep 1
 
 #retrieve dot files, fonts, themes, wallpaper, and icons, move them to their correct directories/overwrite pre-existing files
 load="======================================>"
 echo -e "\e[34m"
+sudo mkdir ~/.config
+sudo mkdir ~/.config/xmonad
+sudo mkdir ~/.config/xmobar
 sudo zypper in kvantum-qt5 kvantum-qt6 monoid-fonts fontawesome-fonts
 wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/xmonad.hs
 sudo mv xmonad.hs ~/.config/xmonad
@@ -68,7 +71,7 @@ sudo mkdir ~/.config/xmobar
 sudo echo "exec xmonad" > ~/.xinitrc
 wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/seolhwa_profile
 sudo cat seolhwa_profile >> ~/.profile
-rm seolhwa_profile
+sudo rm seolhwa_profile
 sudo mv xmobarrc ~/.config/xmobar
 wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/picom.conf
 sudo mkdir ~/.config/picom
@@ -80,7 +83,7 @@ wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/re
 sudo mv cyberware* ~/Multimedia/Wallpapers
 wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/seolhwa_bashrc
 sudo cat seolhwa_bashrc >> ~/.bashrc
-rm seolhwa_bashrc
+sudo rm seolhwa_bashrc
 
 #stuff to do when you come back to this: write the script for installing themes, icons, and cursors, look into automatically setting qt to gtk?
 sudo mkdir ~/.config/rofi
