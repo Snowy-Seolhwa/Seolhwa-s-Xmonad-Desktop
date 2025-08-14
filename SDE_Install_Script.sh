@@ -36,7 +36,7 @@ sleep 1
 #install essential packages and config tools
 load="=========>                              "
 echo -e "\e[34m"
-sudo zypper --non-interactive in xorg-x11 xorg-x11-server xorg-x11-server-extra xinit xmonad ghc-xmonad* xmobar ghc-xmobar kitty picom dunst fcitx5 fcitx5-hangul fcitx5-gtk* fcitx5-qt5 fcitx5-qt6 fcitx5-configtool rofi scrot xscreensaver xbacklight nemo feh xsetroot lxappearance qt5ct xrandr arandr libnotify4 NetworkManager polkit polkit-gnome alsa-utils pulseaudio
+sudo zypper --non-interactive in xorg-x11 xorg-x11-server xorg-x11-server-extra xinit xmonad ghc-xmonad* xmobar ghc-xmobar kitty picom dunst fcitx5 fcitx5-hangul fcitx5-gtk* fcitx5-qt5 fcitx5-qt6 fcitx5-configtool rofi scrot xscreensaver xbacklight nemo feh xsetroot lxappearance qt5ct xrandr arandr libnotify4 NetworkManager polkit polkit-gnome alsa-utils pulseaudio git-core
 echo -e "[$load]\e[0m"
 sleep 1
 
@@ -120,17 +120,16 @@ rm fcitx5.tar.gz
 rm -r .config/fcitx5
 mv fcitx5 .config
 wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/startuptheme.wav
-mkdir .startuptheme
-mv startuptheme.wav .startuptheme
+mkdir .sounds
+mv startuptheme.wav .sounds
 
 
-
-#write some script to automatically edit .config/gtk-3.0/settings.ini file, apparently easier than using gsettings
-#make a modified xmonad.hs without the depreciated ungrab thing and also while youre working on the above, figure out how to have the script switch the
-#size of xmobar for different resolutions
+#write some lines to automatically unmute all the volumes?
+#write some scripts to do system sounds on usb insert/remove, error, and dunst notification
+#figure out how to install and configure ly
+#figure out grub theming
 #remember what file you edited with the vsync thing to prevent screen tearing
-#for fcitx5 just replace the entire .config/fcitx5 directory since there are several config and profile files. Maybe fcitx5-configtool overrides the config intermittently?
-#for dunst create the .config/dunst directory and just copy in the dunstrc file
+#Maybe fcitx5-configtool overrides the config intermittently?
 #fix the loading bars and also see about automatically responding to the y/n/a zypper prompts
 #user is going to need to do some minor manual adjustment in qt5ct and fcitx5-configtool
 
