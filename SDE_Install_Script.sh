@@ -140,3 +140,5 @@ sleep 1
 #install non-repo games and programs and make symlinks for all of them
 
 #add debian support?
+
+startx
