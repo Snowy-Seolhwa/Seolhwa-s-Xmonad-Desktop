@@ -1,8 +1,8 @@
-Config { font = "xft:Monoid-Regular 9"
+Config { font = "xft:Monoid-Regular 10"
        , additionalFonts = []
        , bgColor = "white"
        , fgColor = "black"
-       , position = Static { xpos= 12 , ypos = 12, width = 1576, height = 30 }
+       , position = Static { xpos= 12 , ypos = 12, width = 1896, height = 36 }
        , textOffset = -1
        , iconOffset = -1
        , lowerOnStart = True
@@ -12,19 +12,21 @@ Config { font = "xft:Monoid-Regular 9"
        , iconRoot = "."
        , allDesktops = True
        , overrideRedirect = True
-       , commands = [ Run Weather "KTCL" ["-t","Weather: <skyCondition> <windKnots>Kts <tempC>C"] 36000
-		    , Run Network "wlp3s0" ["-t","Wifi: ↑<tx>Kb ↓<rx>Kb"] 10
-                    , Run Cpu [] 10
-                    , Run Memory ["-t","Ram: <used> Mb"] 20
-                    , Run Date "%a %b %_d %H:%M" "date" 10
+       , commands = [ Run Network "wlp3s0" ["-t"," ↑<tx>Kb ↓<rx>Kb"] 10
+                    , Run Cpu ["-t"," <total>%"] 20
+                    , Run ThermalZone 1 ["-t", "<temp>C"
+                            , "-H", "70"        -- high threshold
+                            , "-h", "#FF0000", "-n", "#000000"] 40
+                    , Run Memory ["-t"," <used> Mb"] 20
+                    , Run Date "%a %b %_d %I:%M" "date" 10
 		    , Run StdinReader
 		    , Run Alsa "default" "Master"
-                        [ "--template", "Volume: <volumestatus>"
+                        [ "--template", "  <volumestatus>"
                         , "--suffix"  , "True"
                         , "--"
                         , "--on", ""
                         ]
-		    , Run Battery        [ "--template" , "Battery: <acstatus>"
+		    , Run Battery        [ "--template" , "  <acstatus>"
                              , "--Low"      , "10"        -- units: %
                              , "--High"     , "80"        -- units: %
                              , "--low"      , "red"
@@ -44,5 +46,5 @@ Config { font = "xft:Monoid-Regular 9"
 		    ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " ♥ %cpu% | %memory% | %wlp3s0% | %battery%} %XMonadLog% {%alsa:default:Master% | %KTCL% | %date% ♥ "
+       , template = "  %cpu% %thermal1% | %memory% | %wlp3s0%} ♥  %XMonadLog%  ♥ {%alsa:default:Master% | %battery% | %date% "
        }
