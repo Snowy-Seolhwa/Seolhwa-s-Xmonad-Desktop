@@ -16,7 +16,7 @@ Config { font = "xft:Monoid-Regular 10"
                     , Run Cpu ["-t"," <total>%"] 20
                     , Run ThermalZone 1 ["-t", "<temp>C"
                             , "-H", "70"        -- high threshold
-                            , "-h", "#FF0000", "-n", "#000000"] 40
+                            , "-h", "#FF0000", "-n", "#000000"] 50
                     , Run Memory ["-t"," <used> Mb"] 20
                     , Run Date "%a %b %_d %I:%M" "date" 10
 		    , Run StdinReader

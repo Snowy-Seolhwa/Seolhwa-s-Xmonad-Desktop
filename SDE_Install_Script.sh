@@ -36,7 +36,7 @@ sleep 1
 #install essential packages and config tools
 load="=========>                              "
 echo -e "\e[34m"
-sudo zypper --non-interactive in xorg-x11 xorg-x11-server xorg-x11-server-extra xinit xmonad ghc-xmonad* xmobar ghc-xmobar kitty picom dunst fcitx5 fcitx5-hangul fcitx5-gtk* fcitx5-qt5 fcitx5-qt6 fcitx5-configtool rofi scrot xscreensaver xbacklight nemo feh xsetroot lxappearance qt5ct xrandr arandr libnotify4 NetworkManager polkit polkit-gnome pipewire
+sudo zypper --non-interactive in xorg-x11 xorg-x11-server xorg-x11-server-extra xinit xmonad ghc-xmonad* xmobar ghc-xmobar kitty picom dunst fcitx5 fcitx5-hangul fcitx5-gtk* fcitx5-qt5 fcitx5-qt6 fcitx5-configtool rofi scrot xscreensaver xbacklight nemo feh xsetroot lxappearance qt5ct xrandr arandr libnotify4 NetworkManager polkit polkit-gnome alsa-utils pulseaudio
 echo -e "[$load]\e[0m"
 sleep 1
 
@@ -141,4 +141,4 @@ sleep 1
 
 #add debian support?
 
-startx
+sudo reboot
