@@ -1,0 +1,5 @@
+# Play sound on USB plug
+ACTION=="add", SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", RUN+="/usr/bin/aplay /home/seolhwa/.sounds/insert.wav"
+
+# Play sound on USB unplug
+ACTION=="remove", SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", RUN+="/usr/bin/aplay /home/seolhwa/.sounds/remove.wav"
