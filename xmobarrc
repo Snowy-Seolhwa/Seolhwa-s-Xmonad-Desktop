@@ -1,4 +1,4 @@
-Config { font = "xft:Monoid-Regular 10"
+Config { font = "xft:Monoid-Regular 11"
        , additionalFonts = []
        , bgColor = "white"
        , fgColor = "black"
