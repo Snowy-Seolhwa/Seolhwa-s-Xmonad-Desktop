@@ -1,8 +1,8 @@
-Config { font = "xft:Monoid-Regular 11"
+Config { font = "xft:Monoid-Regular 10"
        , additionalFonts = []
        , bgColor = "white"
        , fgColor = "black"
-       , position = Static { xpos= 12 , ypos = 12, width = 1896, height = 36 }
+       , position = Static { xpos= 12 , ypos = 12, width = 1576, height = 30 }
        , textOffset = -1
        , iconOffset = -1
        , lowerOnStart = True
@@ -21,28 +21,26 @@ Config { font = "xft:Monoid-Regular 11"
                     , Run Date "%a %b %_d %I:%M" "date" 10
 		    , Run StdinReader
 		    , Run Alsa "default" "Master"
-                        [ "--template", "  <volumestatus>"
+                        [ "--template", "<volumestatus>"
                         , "--suffix"  , "True"
                         , "--"
-                        , "--on", ""
+                        , "--on", " "
+                        , "--off", " [muted]"
                         ]
-		    , Run Battery        [ "--template" , "  <acstatus>"
-                             , "--Low"      , "10"        -- units: %
-                             , "--High"     , "80"        -- units: %
-                             , "--low"      , "red"
-                             , "--normal"   , "orange"
-                             , "--high"     , "green"
-
-                             , "--" -- battery specific options
-                                       -- discharging status
-                                       , "-o"	, "<left>%"
-                                       -- AC "on" status
-                                       , "-O"	, "<fc=orange>Charging</fc>"
-                                       -- charged status
-                                       , "-i"	, "<fc=green>Charged</fc>"
-                             ] 50
+		    , Run Battery 
+                        [ "--template", "<acstatus>"       -- <acstatus> already includes the icon + % text
+                        , "--Low",      "10"
+                        , "--High",     "80"
+                        , "--low",      "red"
+                        , "--normal",   "orange"
+                        , "--high",     "green"
+                        , "--"
+                        , "-o", "<fc=#000000></fc> <left>%"        -- discharging
+                        , "-O", "<fc=#000000></fc> <fc=orange>Charging</fc>"  -- AC charging
+                        , "-i", "<fc=#000000></fc> <fc=green>Charged</fc>"        -- fully charged
+                        ] 50
                     , Run XMonadLog
-                    
+
 		    ]
        , sepChar = "%"
        , alignSep = "}{"
