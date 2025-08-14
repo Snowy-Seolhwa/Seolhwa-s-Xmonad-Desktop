@@ -6,3 +6,12 @@ GTK_IM_MODULE='fcitx5'
 QT_IM_MODULE='fcitx5'
 SDL_IM_MODULE='fcitx5'
 XMODIFIERS='@im=fcitx5'
+
+play_error_sound_on_fail() {  
+  local exit_code=$?
+  if [ $exit_code -ne 0 ]; then
+    /home/seolhwa/.sounds/error_sound.sh >/dev/null 2>&1 & disown
+  fi
+}
+
+PROMPT_COMMAND='play_error_sound_on_fail "$?"; '"$PROMPT_COMMAND"
