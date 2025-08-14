@@ -1,6 +1,7 @@
 # See dunst(5) for all configuration options
 
 [global]
+    
     ### Display ###
 
     # Which monitor should the notifications be displayed on.
@@ -439,6 +440,10 @@
 #    summary = *signed off*
 #    urgency = low
 #
+[play_sound]
+   summary = "*"
+   script = "/home/seolhwa/.sounds/notify_sound.sh"
+
 #[says]
 #    appname = Pidgin
 #    summary = *says*
