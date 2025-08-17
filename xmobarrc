@@ -36,8 +36,10 @@ Config { font = "xft:Monoid-Regular 10"
                         , "--high",     "green"
                         , "--"
                         , "-o", "<fc=#000000></fc> <left>%"        -- discharging
-                        , "-O", "<fc=#000000></fc> <fc=orange>Charging</fc>"  -- AC charging
+                        , "-O", "<fc=#000000></fc> <fc=orange>Charging</fc>"  -- AC charging
                         , "-i", "<fc=#000000></fc> <fc=green>Charged</fc>"        -- fully charged
+                        , "-a", "notify-send -u critical 'Battery running out!!'"
+                        , "-A", "15"
                         ] 50
                     , Run XMonadLog
 
