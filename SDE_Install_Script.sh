@@ -31,7 +31,7 @@ sleep 1
  
 #install essential packages and config tools
 echo -e "\e[34mInstallation step 2/6: Installing core packages \n\e[0m"
-sudo zypper --non-interactive in xorg-x11 xorg-x11-server xorg-x11-server-extra xinit xmonad ghc-xmonad* xmobar ghc-xmobar kitty picom dunst fcitx5 fcitx5-hangul fcitx5-gtk* fcitx5-qt5 fcitx5-qt6 fcitx5-configtool rofi scrot xscreensaver xbacklight nemo feh xsetroot lxappearance qt5ct xrandr arandr libnotify4 NetworkManager polkit polkit-gnome alsa-utils pulseaudio pavucontrol git-core
+sudo zypper --non-interactive in xorg-x11 xorg-x11-server xorg-x11-server-extra xinit xmonad ghc-xmonad* xmobar ghc-xmobar kitty picom dunst fcitx5 fcitx5-hangul fcitx5-gtk* fcitx5-qt5 fcitx5-qt6 fcitx5-configtool rofi scrot xscreensaver xbacklight nemo feh xsetroot lxappearance qt5ct xrandr arandr libnotify4 NetworkManager polkit polkit-gnome alsa-utils pulseaudio pavucontrol git-core brightnessctl
 sleep 1
 
 #install user programs (games, general software, etc)
@@ -125,11 +125,12 @@ mv error_sound.sh .sounds
 chmod +x /home/seolhwa/.sounds/notify_sound.sh
 chmod +x /home/seolhwa/.sounds/error_sound.sh
 udevadm control --reload-rules
+wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/issue
+mv issue /etc/issue.d
 
 
 #write some lines to automatically unmute all the volumes?
 #write some scripts to do system sounds on usb insert/remove, error, and dunst notification
-#figure out how to install and configure ly
 #figure out grub theming
 #remember what file you edited with the vsync thing to prevent screen tearing - its the 20-intel.conf in /etc/X11/xorg.conf.d
 #Maybe fcitx5-configtool overrides the config intermittently?
