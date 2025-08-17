@@ -31,7 +31,7 @@ sleep 1
  
 #install essential packages and config tools
 echo -e "\e[34mInstallation step 2/6: Installing core packages \n\e[0m"
-sudo zypper --non-interactive in xorg-x11 xorg-x11-server xorg-x11-server-extra xinit xmonad ghc-xmonad* xmobar ghc-xmobar kitty picom dunst fcitx5 fcitx5-hangul fcitx5-gtk* fcitx5-qt5 fcitx5-qt6 fcitx5-configtool rofi scrot xscreensaver xbacklight nemo feh xsetroot lxappearance qt5ct xrandr arandr libnotify4 NetworkManager polkit polkit-gnome alsa-utils pulseaudio git-core
+sudo zypper --non-interactive in xorg-x11 xorg-x11-server xorg-x11-server-extra xinit xmonad ghc-xmonad* xmobar ghc-xmobar kitty picom dunst fcitx5 fcitx5-hangul fcitx5-gtk* fcitx5-qt5 fcitx5-qt6 fcitx5-configtool rofi scrot xscreensaver xbacklight nemo feh xsetroot lxappearance qt5ct xrandr arandr libnotify4 NetworkManager polkit polkit-gnome alsa-utils pulseaudio pavucontrol git-core
 sleep 1
 
 #install user programs (games, general software, etc)
@@ -122,6 +122,8 @@ mv remove.wav .sounds
 mv 99-usb-sound.rules /etc/udev/rules.d
 mv notify_sound.sh .sounds
 mv error_sound.sh .sounds
+chmod +x /home/seolhwa/.sounds/notify_sound.sh
+chmod +x /home/seolhwa/.sounds/error_sound.sh
 udevadm control --reload-rules
 
 
