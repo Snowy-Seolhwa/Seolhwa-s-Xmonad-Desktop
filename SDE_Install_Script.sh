@@ -10,7 +10,7 @@ echo -e "\e[34m
 ░▒▓███████▓▒░  ░▒▓████████▓▒░  ░▒▓██████▓▒░  ░▒▓████████▓▒░ ░▒▓█▓▒░░▒▓█▓▒░  ░▒▓█████████████▓▒░  ░▒▓█▓▒░░▒▓█▓▒░                                                                                                               
  \e[0m"
 
-echo -e "\e[34mVersion 1.0.3 \n \e[0m"
+echo -e "\e[34mVersion 1.0.4 \n \e[0m"
 
 echo -e "\e[34m   Welcome to the Seolhwa Desktop environment installer script! This script is configured to install the XMonad window manager
 with a collection of basic software, themes, games, icons, fonts, and desktop programs. Please run this script on a fresh 
@@ -119,16 +119,31 @@ tar -xvf fcitx5.tar.gz
 rm fcitx5.tar.gz
 rm -r .config/fcitx5
 mv fcitx5 .config
-wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/startuptheme.wav
+wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/sounds/startuptheme.wav
+wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/sounds/notify.wav
+wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/sounds/error.wav
+wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/sounds/insert.wav
+wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/sounds/remove.wav
+wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/sounds/99-usb-sound.rules
+wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/sounds/error_sound.sh
+wget https://raw.githubusercontent.com/Snowy-Seolhwa/Seolhwa-s-Xmonad-Desktop/refs/heads/main/sounds/notify_sound.sh
 mkdir .sounds
 mv startuptheme.wav .sounds
+mv notify.wav .sounds
+mv error.wav .sounds
+mv insert.wav .sounds
+mv remove.wav .sounds
+mv 99-usb-sound.rules /etc/udev/rules.d
+mv notify_sound.sh .sounds
+mv error_sound.sh .sounds
+udevadm control --reload-rules && udevadm trigger
 
 
 #write some lines to automatically unmute all the volumes?
 #write some scripts to do system sounds on usb insert/remove, error, and dunst notification
 #figure out how to install and configure ly
 #figure out grub theming
-#remember what file you edited with the vsync thing to prevent screen tearing
+#remember what file you edited with the vsync thing to prevent screen tearing - its the 20-intel.conf in /etc/X11/xorg.conf.d
 #Maybe fcitx5-configtool overrides the config intermittently?
 #fix the loading bars and also see about automatically responding to the y/n/a zypper prompts
 #user is going to need to do some minor manual adjustment in qt5ct and fcitx5-configtool
