@@ -55,6 +55,7 @@ import XMonad.Hooks.EwmhDesktops --required for fullscreen
 import XMonad.Util.EZConfig --EZconfig makes the keybindings less annoying to write out
 import XMonad.Util.Loggers
 import XMonad.Util.SpawnOnce --lets xmonad start stuff when it launches
+import XMonad.Util.Ungrab --comment out if using an up to date xmonad install (0.18), it comes free with your fucking xbox
 import XMonad.Util.NamedScratchpad --timeout corner for windows that I don't want clogging up my workspaces
 
 import XMonad.Layout.NoBorders --allows you to turn off borders for floating windows and fullscreen
@@ -209,7 +210,7 @@ myStartupHook :: X ()
 myStartupHook = do
     spawnOnce "feh --bg-scale ~/Multimedia/Wallpapers/cyberware2.png &"
     spawnOnce "picom &"
-    spawnOnce "aplay ~/.startuptheme/startuptheme.wav &"
+    spawnOnce "aplay ~/.sounds/startuptheme.wav &"
     spawnOnce "xsetroot -cursor_name left_ptr &"
     spawnOnce "dunst &" --notifications
     spawnOnce "fcitx5 -d &" --language input (hangul in my case)
