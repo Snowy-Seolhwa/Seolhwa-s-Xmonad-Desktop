@@ -38,8 +38,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/grep.vim'
 Plug 'vim-scripts/CSApprox'
@@ -269,14 +267,6 @@ if exists("*fugitive#statusline")
   set statusline+=%{fugitive#statusline()}
 endif
 
-" vim-airline
-let g:airline_theme = 'minimalist'
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tagbar#enabled = 1
-let g:airline_skip_empty_sections = 1
-
 "*****************************************************************************
 "" Abbreviations
 "*****************************************************************************
@@ -368,6 +358,9 @@ set autoread
 "" Split
 noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
+noremap <Leader>t :<C-u>botright split \| execute "resize " . (winheight(0) / 3) \| terminal<CR>
+
+
 
 "" Git
 noremap <Leader>ga :Gwrite<CR>
@@ -389,6 +382,9 @@ nnoremap <leader>sc :CloseSession<CR>
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 nnoremap <silent> <S-t> :tabnew<CR>
+
+"" Lets you exit terminal easier
+tnoremap <Esc> <C-\><C-n>
 
 "" Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
